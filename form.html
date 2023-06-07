@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            var firstname=document.getElementById("firstname").value
+            var mobile=document.getElementById("mobile").value
+            var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
+            var firstNameCheck=/^[a-zA-Z]+$/
+            var mobileCheck=/^[0-9]{10}$/
+            var emailCheck=/^[a-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+            var passwordCheck=/^[\w.#@]{8,12}
+            if(firstName==""||firstName.length<3){
+                alert("please enter your first name")
+                return false
+            }
+    
+            if(!firstName.match(firstNameCheck)){
+                alert("Name must carry alphabet ")
+                return false
+            }
+            if(!mobile.match(mobileCheck)){
+                alert("please check ur mobile number")
+                return false
+            }
+            if(!email.match(emailCheck)){
+                alert("please check ur mail id")
+                return false
+            }
+            if(!password.match(passwordCheck)){
+                alert("check your password")
+                return false
+            }
+            return true
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate" action="">
+        <p><input type="text" placeholder="enter firstname" id="firstname"/></p>
+        <p><input placeholder="Enter ur mobile number" id="mobile"/></p>
+        <p><input placeholder="Enter ur mailid" id="email"/></p>
+        <p><input placeholder="Enter the password" id="password"/></p>
+        <button>submit</button>
+    </form>
+</body>
+</html>
+<!--
+    onsubmit - will submit
+    alert- will help to alert
+-->
